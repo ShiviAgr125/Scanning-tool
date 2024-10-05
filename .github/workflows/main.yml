@@ -25,4 +25,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: ZAP-Report
-          path: zap_report.html  # Adjust if using a different format
+          path: ./zap_report.html  # Adjust if using a different format
