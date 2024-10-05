@@ -1,0 +1,25 @@
+name: ZAP Baseline Scan on Public Website
+ 
+on:
+  workflow_dispatch:  # Allows manual triggering
+ 
+jobs:
+  zap-baseline-scan:
+    runs-on: ubuntu-latest
+ 
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+ 
+      - name: Set up ZAP
+        uses: zaproxy/action-baseline@v0.7.0
+        with:
+           target: 'https://example.com/'  # Replace with your target URL
+           format: 'html'  # Output format (html, json)
+           timeout: 300  # Timeout in seconds
+ 
+      - name: Upload ZAP Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: ZAP-Report
+          path: zap_report.html  # Adjust if using a different format
