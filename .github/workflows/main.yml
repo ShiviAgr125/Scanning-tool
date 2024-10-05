@@ -1,8 +1,9 @@
 name: ZAP Baseline Scan on Public Website
  
 on:
-  workflow_dispatch:  # Allows manual triggering
- 
+  push:
+    branches:
+      - main
 jobs:
   zap-baseline-scan:
     runs-on: ubuntu-latest
