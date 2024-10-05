@@ -15,6 +15,7 @@ jobs:
         uses: zaproxy/action-baseline@v0.7.0
         with:
            target: 'https://example.com/'  # Replace with your target URL
+           docker_name: 'owasp/zap2docker-weekly' 
            format: 'html'  # Output format (html, json)
            timeout: 300  # Timeout in seconds
  
